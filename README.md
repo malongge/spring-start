@@ -80,3 +80,23 @@ datasource 的配置可以自定义配置
     
 默认链接池为：hikari
 
+排除调某些 bean 的注入：
+
+    @SpringBootApplication(exclude = { *.class, ...}
+    
+druid 配置参考：
+
+    https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE
+    
+配置 druid 为连接持，需要先排除掉默认的 hikari：
+
+    <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>HikariCP</artifactId>
+                        <groupId>com.zaxxer</groupId>
+                    </exclusion>
+                </exclusions>
+    </dependency>

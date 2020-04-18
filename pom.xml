@@ -12,6 +12,7 @@
 	<modules>
 		<module>start-jdbc</module>
 		<module>hello-spring</module>
+		<module>druid-datasource</module>
 	</modules>
 	<groupId>com.jzb</groupId>
 	<artifactId>start</artifactId>
